@@ -122,7 +122,8 @@ for theme in range(len(theme_lists)):
             "",
             theme + 3,
             "",
-            "\n".join(psid_lists[theme])
+            "\n".join(psid_lists[theme]),
+            ""
         ]
         csv_lists.append(csv_list)
 
