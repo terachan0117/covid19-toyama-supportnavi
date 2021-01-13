@@ -49,7 +49,7 @@ for table in range(len(tables)):
         # テーブルヘッダーは無視
         if tr > 0:
             tds = trs[tr].findAll("td")
-            if len(tds) == 4 or len(tds) == 60: # 制度・内容・窓口・電話番号すべて揃っている場合(tr終了タグがない例外も含む)
+            if len(tds) == 4 or len(tds) == 62: # 制度・内容・窓口・電話番号すべて揃っている場合(tr終了タグがない例外も含む)
                     if tds[0].text == '県営住宅家賃の減免及び徴収猶予': # 例外対応(td終了タグがない)
                         csv_list = [
                             "psid1.0+JA160008+" + str(10000000 + len(csv_lists)),
