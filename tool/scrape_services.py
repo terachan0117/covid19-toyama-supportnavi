@@ -4,6 +4,7 @@ from urllib.request import urlopen
 from bs4 import BeautifulSoup
 import ssl
 ssl._create_default_https_context = ssl._create_unverified_context
+import re
 
 # 富山県HPに掲載されている最新の支援情報を取得する
 html = urlopen("http://www.pref.toyama.jp/sections/1118/virus/shien.html")
@@ -75,7 +76,7 @@ for table in range(len(tables)):
                             10000000 + len(csv_lists),
                             "",
                             theme,
-                            tds[0].text,
+                            re.sub(r"\s{2,}", " ●", tds[0].text),
                             tds[1].text,
                             "",
                             "",
