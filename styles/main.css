@@ -488,14 +488,15 @@ footer {
 }
 
 .top-page .banner-container {
-    justify-content: flex-start;
-    overflow: hidden;
-    background: transparent;
-    border: none;
-    box-shadow: none;
-    border-radius: 0px;
-    height: 16rem;
-    width:98%;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  overflow: hidden;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  border-radius: 0px;
+  height: auto;
+  width: 98%;
   }
 
 .top-page-banner {
@@ -984,7 +985,6 @@ hr {
   }
 
   .top-page .banner-container {
-    display:flex;
     flex-direction: row;
     justify-content: flex-start;
     overflow: hidden;
@@ -993,12 +993,12 @@ hr {
     box-shadow: none;
     border-radius: 0px;
     width:98%;
-    height: 36vw;
+    height: auto;
   }
 
   .top-page .top-page-banner {
-    width: 30vw;
-    height: 30vw;
+    width: 25vw;
+    height: 25vw;
   }
 
   .top-btn-label {
