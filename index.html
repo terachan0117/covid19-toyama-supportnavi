@@ -36,8 +36,14 @@
   <link rel="shortcut icon" href="./images/favicon.ico" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
     type="text/css">
-  <link rel="stylesheet" href="./styles/main.css" type="text/css" />
-  <link rel="stylesheet" href="./styles/custom.css" type="text/css" />
+  <script>
+    document.write(
+      '<link rel="stylesheet" href="./styles/main.css?' + Date.now() + '" type="text/css" />'
+    );
+    document.write(
+      '<link rel="stylesheet" href="./styles/custom.css?' + Date.now() + '" type="text/css" />'
+    );
+  </script>
   <link rel="stylesheet" href="./styles/answericons.css" type="text/css" />
   <link rel="stylesheet" href="./styles/color-def-default.css" type="text/css" data-color-def="0" />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
@@ -291,7 +297,8 @@
             </a>
           </div>
           <div class="top-page-banner">
-            <a href="http://www.pref.toyama.jp/cms_sec/1205/kj00021774-001-01.html" target="_blank" rel="noopener noreferrer">
+            <a href="http://www.pref.toyama.jp/cms_sec/1205/kj00021774-001-01.html" target="_blank"
+              rel="noopener noreferrer">
               <img src="./images/banner_top_personalsupport.png" alt="富山県 LINEアカウント 富山県‐新型コロナ対策パーソナルサポート">
             </a>
           </div>
@@ -622,8 +629,14 @@
       </div>
     </div>
   </div>
-  <script src="./scripts/pnavi.js"></script>
-  <script src="./scripts/main.js"></script>
+  <script>
+    document.write(
+      '<script src="./scripts/pnavi.js?' + Date.now() + '"><\/script>'
+    );
+    document.write(
+      '<script src="./scripts/main.js?' + Date.now() + '"><\/script>'
+    );
+  </script>
 </body>
 
 </html>
