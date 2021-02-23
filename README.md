@@ -2,9 +2,7 @@
 
 ![](https://raw.githubusercontent.com/Terachan0117/covid19-toyama-supportnavi/master/images/site-banner.png)
 
-[富山県新型コロナウイルス感染症支援情報ナビ](https://tera-chan.com/covid19-toyama/supportnavi/)は新型コロナウイルス感染症(COVID-19)の影響によってお困りの企業や県民のみなさんが利用できるさまざまな支援制度情報を提供するために、[Terachan](https://tera-chan.com/)が開設したものです。
-
-※現時点で富山県の公認サイトではありません。
+[富山県新型コロナウイルス感染症支援情報ナビ](https://tera-chan.com/covid19-toyama/supportnavi/)は新型コロナウイルス感染症(COVID-19)の影響によってお困りの企業や県民のみなさんが利用できるさまざまな支援制度情報を提供するために、[寺田 一世](https://tera-chan.com/)が開設したものです。
 
 富山県及び国の支援メニューについて、必要な方へ必要な支援が届くよう誰にでもわかりやすいナビゲーションサイトを構築し、県民生活・経済活動の確保を図ることを目的としています。
 
