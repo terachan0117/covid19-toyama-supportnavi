@@ -50,6 +50,9 @@ for table in range(len(tables)):
         # テーブルヘッダーは無視
         if tr > 0:
             tds = trs[tr].findAll("td")
+            url = (tds[0].find('a').get('href')) if (len(tds[0].findAll('a')) > 0) else ("")
+            if (url != '') and ('http' not in url):
+                url  = 'https://www.pref.toyama.jp' + url
             if len(tds) == 4 or len(tds) == 62: # 制度・内容・窓口・電話番号すべて揃っている場合(tr終了タグがない例外も含む)
                     if tds[0].text == '県営住宅家賃の減免及び徴収猶予': # 例外対応(td終了タグがない)
                         csv_list = [
@@ -64,7 +67,7 @@ for table in range(len(tables)):
                             "",
                             "",
                             "",
-                            (tds[0].find('a').get('href')) if (len(tds[0].findAll('a')) > 0) else (""),
+                            url,
                             ('県建築住宅課（' + tds[3].text + '）') if (tds[3].text != '　') else (tds[2].text),
                             "",
                             tag,
@@ -83,7 +86,7 @@ for table in range(len(tables)):
                             "",
                             "",
                             "",
-                            (tds[0].find('a').get('href')) if (len(tds[0].findAll('a')) > 0) else (""),
+                            url,
                             (tds[2].text + '（' + tds[3].text + '）') if (tds[3].text != '　') else (tds[2].text),
                             "",
                             tag,
@@ -107,7 +110,7 @@ for table in range(len(tables)):
                         "",
                         "",
                         "",
-                        (tds[0].find('a').get('href')) if (len(tds[0].findAll('a')) > 0) else (""),
+                        url,
                         csv_lists[len(csv_lists)-1][12],
                         "",
                         tag,
