@@ -7,7 +7,7 @@ ssl._create_default_https_context = ssl._create_unverified_context
 import re
 
 # 富山県HPに掲載されている最新の支援情報を取得する
-html = urlopen("https://www.pref.toyama.jp/1118/kurashi/kenkou/iryou/virus/shien.html")
+html = urlopen("https://www.pref.toyama.jp/1021/kurashi/kenkou/iryou/virus/shien.html")
 bsObj = BeautifulSoup(html, "html.parser")
 
 # csvにするデータをここに追加していく
@@ -34,8 +34,8 @@ csv_list_header = [
 ]
 csv_lists.append(csv_list_header)
 
-tables = bsObj.findAll("table")
-themes = bsObj.findAll("h3")
+tables = bsObj.find_all("table", class_="datatable")
+themes = bsObj.find_all("h3")
 
 # テーブルごとにデータを追加していく
 for table in range(len(tables)):
