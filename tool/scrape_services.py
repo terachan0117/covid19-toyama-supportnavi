@@ -97,6 +97,26 @@ for table in range(len(tables)):
                         ""
                     ]
                     csv_lists.append(csv_list)
+                elif '富山県小規模企業者緊急支援補助金(ミニリバイバル補助金)' in tds[0].text: # 例外対応(窓口・電話番号のみではない)
+                    csv_list = [
+                        "psid1.0+JA160008+" + str(10000000 + len(csv_lists)),
+                        10000000 + len(csv_lists),
+                        "",
+                        theme,
+                        tds[0].text,
+                        tds[1].text,
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        url,
+                        csv_lists[len(csv_lists)-1][12],
+                        "",
+                        tag,
+                        ""
+                    ]
+                    csv_lists.append(csv_list)
                 else:
                     csv_lists[len(csv_lists)-1][12] += (', '+tds[0].text + '（' + tds[1].text + '）') if (tds[1].text != '　') else (', '+tds[0].text)
             else:
