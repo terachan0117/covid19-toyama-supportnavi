@@ -40,9 +40,9 @@ themes = bsObj.find_all("h3")
 # テーブルごとにデータを追加していく
 for table in range(len(tables)):
     # テーマはテーブルごとに割り当てられている
-    theme = (themes[table].text + "（個人向け）") if (table < 4) else (themes[table].text + "（事業者向け）")
+    theme = (themes[table].text + "（個人向け）") if (table < 3) else (themes[table].text + "（事業者向け）")
     # タグはテーブルナンバーで割り当てられる
-    tag = ("個人向け") if (table < 4) else ("事業者向け")
+    tag = ("個人向け") if (table < 3) else ("事業者向け")
 
     # テーブルの各行ごとに処理
     trs = tables[table].findAll("tr")
@@ -53,51 +53,31 @@ for table in range(len(tables)):
             url = (tds[0].find('a').get('href')) if (len(tds[0].findAll('a')) > 0) else ("")
             if (url != '') and ('http' not in url):
                 url  = 'https://www.pref.toyama.jp' + url
-            if len(tds) == 4 or len(tds) == 62: # 制度・内容・窓口・電話番号すべて揃っている場合(tr終了タグがない例外も含む)
-                    if tds[0].text == '県営住宅家賃の減免及び徴収猶予': # 例外対応(td終了タグがない)
-                        csv_list = [
-                            "psid1.0+JA160008+" + str(10000000 + len(csv_lists)),
-                            10000000 + len(csv_lists),
-                            "",
-                            theme,
-                            tds[0].text,
-                            tds[1].text,
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            url,
-                            ('県建築住宅課（' + tds[3].text + '）') if (tds[3].text != '　') else (tds[2].text),
-                            "",
-                            tag,
-                            ""
-                        ]
-                    else:
-                        csv_list = [
-                            "psid1.0+JA160008+" + str(10000000 + len(csv_lists)),
-                            10000000 + len(csv_lists),
-                            "",
-                            theme,
-                            re.sub(r"\s{2,}", " ●", tds[0].text),
-                            tds[1].text,
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            url,
-                            (tds[2].text + '（' + tds[3].text + '）') if (tds[3].text != '　') else (tds[2].text),
-                            "",
-                            tag,
-                            ""
-                        ]
-                    csv_lists.append(csv_list)
+            if len(tds) == 4: # 制度・内容・窓口・電話番号すべて揃っている場合
+                csv_list = [
+                    "psid1.0+JA160008+" + str(10000000 + len(csv_lists)),
+                    10000000 + len(csv_lists),
+                    "",
+                    theme,
+                    re.sub(r"\s{2,}", " ●", tds[0].text),
+                    tds[1].text,
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    url,
+                    (tds[2].text + '（' + tds[3].text + '）') if (tds[3].text != '　') else (tds[2].text),
+                    "",
+                    tag,
+                    ""
+                ]
+                csv_lists.append(csv_list)
             elif len(tds) == 3: # 内容・窓口・電話番号のみの場合
                 csv_lists[len(csv_lists)-1][5] += '\n' + tds[0].text
                 csv_lists[len(csv_lists)-1][12] += (', '+tds[1].text + '（' + tds[2].text + '）') if (tds[2].text != '　') else (', '+tds[1].text)
             elif len(tds) == 2: # 窓口・電話番号のみの場合
-                if tds[0].text == '小学校休業等対応支援金（厚生労働省ホームページ）': # 例外対応(窓口・電話番号のみではない)
+                if tds[0].text == '小学校休業等対応支援金（厚生労働省ホームページ）（外部サイトへリンク）': # 例外対応(窓口・電話番号のみではない)
                     csv_list = [
                         "psid1.0+JA160008+" + str(10000000 + len(csv_lists)),
                         10000000 + len(csv_lists),
