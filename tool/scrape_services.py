@@ -146,12 +146,12 @@ cities = [
     {
         "name": "氷見市",
         "code": 162051,
-        "url": "https://www.city.himi.toyama.jp/emergency/5496.html"
+        "url": "https://www.city.himi.toyama.jp/gyosei/soshiki/hishokoho/4/1/5349.html"
     },
     {
         "name": "滑川市",
         "code": 162060,
-        "url": "https://www.city.namerikawa.toyama.jp/important_notice/5369.html"
+        "url": "https://www.city.namerikawa.toyama.jp/notice/covid19info/5846.html"
     },
     {
         "name": "黒部市",
@@ -191,17 +191,17 @@ cities = [
     {
         "name": "立山町",
         "code": 163236,
-        "url": "https://www.town.tateyama.toyama.jp/pub/event-topics/svTopiDtl.aspx?servno=8034"
+        "url": "https://www.town.tateyama.toyama.jp/emergency/4687.html"
     },
     {
         "name": "入善町",
         "code": 163422,
-        "url": "https://www.town.nyuzen.toyama.jp/oshirase/info_korona.html"
+        "url": "https://www.town.nyuzen.toyama.jp/gyosei/emergency/3141.html"
     },
     {
         "name": "朝日町",
         "code": 163431,
-        "url": "https://www.town.asahi.toyama.jp/kinkyujouhou/1608866639930.html"
+        "url": "https://www.town.asahi.toyama.jp/kinkyujouhou/1613350008967.html"
     }
 ]
 for city in range(len(cities)):
