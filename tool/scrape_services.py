@@ -151,7 +151,7 @@ cities = [
     {
         "name": "滑川市",
         "code": 162060,
-        "url": "https://www.city.namerikawa.toyama.jp/notice/covid19info/5846.html"
+        "url": "https://www.city.namerikawa.toyama.jp/notice/covid19info/index.html"
     },
     {
         "name": "黒部市",
